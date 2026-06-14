@@ -1,6 +1,6 @@
 /*
- * Corrected handwired numpad + macro row (ZMK)
- * Matches your explicit row/col wiring notes
+ * Handwired numpad + macro row (ZMK)
+ * nice!nano v2
  */
 
 #include <behaviors.dtsi>
@@ -19,6 +19,7 @@
 / {
     macros {
 
+        /* Discord mute -> Ctrl + Shift + , */
         discord_mute: discord_mute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,6 +31,7 @@
                 <&macro_release &kp LCTRL>;
         };
 
+        /* Discord deafen -> Ctrl + Shift + . */
         discord_deafen: discord_deafen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -41,6 +43,7 @@
                 <&macro_release &kp LCTRL>;
         };
 
+        /* Win + Alt + G */
         xbox_clip: xbox_clip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -52,6 +55,7 @@
                 <&macro_release &kp LGUI>;
         };
 
+        /* Win + D */
         show_desktop: show_desktop {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -68,23 +72,23 @@
         default_layer {
             bindings = <
 
-                /* ROW 0 — macros */
+                /* ROW 0 — MACROS */
                 &discord_mute   &discord_deafen   &xbox_clip     &show_desktop
 
-                /* ROW 1 */
-                &kp NUM_LOCK    &kp SLASH         &kp KP_ASTERISK &kp KP_MINUS
+                /* ROW 1 — operators */
+                &kp NUM_LOCK    &kp SLASH         &kp ASTRK      &kp MINUS
 
                 /* ROW 2 */
-                &kp KP_N7       &kp KP_N8         &kp KP_N9       &kp KP_PLUS
+                &kp N7          &kp N8            &kp N9         &kp PLUS
 
                 /* ROW 3 */
-                &kp KP_N4       &kp KP_N5         &kp KP_N6       &trans
+                &kp N4          &kp N5            &kp N6         &trans
 
                 /* ROW 4 */
-                &kp KP_N1       &kp KP_N2         &kp KP_N3       &kp KP_ENTER
+                &kp N1          &kp N2            &kp N3         &kp ENTER
 
-                /* ROW 5 — YOUR CUSTOM WIRING */
-                &trans          &kp KP_N0         &kp KP_DOT      &trans
+                /* ROW 5 — bottom row */
+                &trans          &kp N0            &kp DOT        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
