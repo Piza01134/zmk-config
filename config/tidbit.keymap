@@ -9,31 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-/* Enable ONLY ONE of the &encoder_1 nodes. They are wired to the same pins.*/
-/*
-&encoder_1 {
-    status = "okay";
-};
-&encoder_1_top_left {
-    status = "okay";
-};
-*/
-
-/*
-&encoder_2 {
-    status = "okay";
-};
-
-&encoder_3 {
-    status = "okay";
-};
-*/
-
 &encoder_4 {
     status = "okay";
 };
 
-/* Add any encoder(s) you have enabled to the sensors node, separated by spaces. */
 &sensors {
     sensors = <&encoder_4>;
 };
@@ -48,7 +27,7 @@
             bindings =
                 <&macro_press &kp LCTRL>,
                 <&macro_press &kp LSHIFT>,
-                <&kp K_COMMA>,
+                <&kp COMMA>,
                 <&macro_release &kp LSHIFT>,
                 <&macro_release &kp LCTRL>;
         };
@@ -60,12 +39,12 @@
             bindings =
                 <&macro_press &kp LCTRL>,
                 <&macro_press &kp LSHIFT>,
-                <&kp K_DOT>,
+                <&kp DOT>,
                 <&macro_release &kp LSHIFT>,
                 <&macro_release &kp LCTRL>;
         };
 
-        /* Win + Alt + G (Xbox Game Bar capture) */
+        /* Win + Alt + G */
         xbox_clip: xbox_clip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -77,7 +56,7 @@
                 <&macro_release &kp LGUI>;
         };
 
-        /* Win + D (Show desktop) */
+        /* Win + D */
         show_desktop: show_desktop {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -93,15 +72,20 @@
 
         default_layer {
             bindings = <
-                &discord_mute      &discord_deafen   &xbox_clip      &show_desktop
+                /* TOP ROW (macros) */
+                &discord_mute     &discord_deafen   &xbox_clip      &show_desktop
 
-                &kp KP_NUMBER_7    &kp KP_NUMBER_8   &kp KP_NUMBER_9 &kp KP_PLUS
+                /* ROW 1 */
+                &kp KP_N7         &kp KP_N8         &kp KP_N9       &kp KP_PLUS
 
-                &kp KP_NUMBER_4    &kp KP_NUMBER_5   &kp KP_NUMBER_6 &kp KP_MINUS
+                /* ROW 2 */
+                &kp KP_N4         &kp KP_N5         &kp KP_N6       &kp KP_MINUS
 
-                &kp KP_NUMBER_1    &kp KP_NUMBER_2   &kp KP_NUMBER_3 &lt 1 KP_ENTER
+                /* ROW 3 */
+                &kp KP_N1         &kp KP_N2         &kp KP_N3       &kp KP_ENTER
 
-                &kp KP_NUMBER_0    &kp KP_DOT        &kp KP_SLASH    &kp KP_ASTERISK
+                /* ROW 4 */
+                &kp KP_N0         &kp KP_DOT        &kp KP_SLASH    &kp KP_ASTERISK
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
