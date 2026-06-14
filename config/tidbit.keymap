@@ -84,7 +84,7 @@
                 &kp KP_N1       &kp KP_N2         &kp KP_N3       &kp KP_ENTER
 
                 /* ROW 5 — YOUR CUSTOM WIRING */
-                &trans          &kp KP_N0         &kp KP_DOT      &kp K_EQUAL
+                &trans          &kp KP_N0         &kp KP_DOT      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
