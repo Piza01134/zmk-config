@@ -66,16 +66,16 @@
         compatible = "zmk,keymap";
 
         default_layer {
-           bindings = <
+            bindings = <
 
                 /* ROW 0 — MACROS */
                 &discord_mute   &discord_deafen   &xbox_clip     &show_desktop
 
                 /* ROW 1 */
-                &kp NUM_LOCK    &kp KP_SLASH      &kp KP_MULTIPLY  &kp KP_MINUS
+                &kp NUM_LOCK    &kp SLASH         &kp ASTRK       &kp MINUS
 
                 /* ROW 2 */
-                &kp N7          &kp N8            &kp N9         &kp KP_PLUS
+                &kp N7          &kp N8            &kp N9         &kp PLUS
 
                 /* ROW 3 */
                 &kp N4          &kp N5            &kp N6         &none
@@ -85,7 +85,7 @@
 
                 /* ROW 5 */
                 &none           &kp N0            &kp DOT        &none
-            >; 
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
