@@ -72,7 +72,7 @@
                 &discord_mute   &discord_deafen   &xbox_clip     &show_desktop
 
                 /* ROW 1 — operators */
-                &kp NUM_LOCK    &kp SLASH         &kp KPS(ASTR)  &kp MINUS
+                &kp NUM_LOCK    &kp SLASH         &kp KP_MULTIPLY  &kp MINUS
 
                 /* ROW 2 */
                 &kp N7          &kp N8            &kp N9         &kp PLUS
@@ -83,7 +83,7 @@
                 /* ROW 4 */
                 &kp N1          &kp N2            &kp N3         &kp ENTER
 
-                /* ROW 5 — bottom row */
+                /* ROW 5 */
                 &none           &kp N0            &kp DOT        &none
             >;
 
