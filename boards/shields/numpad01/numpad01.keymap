@@ -10,35 +10,25 @@
         macro_comma: macro_comma {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LCTRL>,
-                <&kp LSHIFT>,
-                <&kp COMMA>;
+            bindings = <&kp LCTRL &kp LSHIFT &kp COMMA>;
         };
 
         macro_period: macro_period {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LCTRL>,
-                <&kp LSHIFT>,
-                <&kp DOT>;
+            bindings = <&kp LCTRL &kp LSHIFT &kp DOT>;
         };
 
         macro_desktop: macro_desktop {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LGUI>,
-                <&kp D>;
+            bindings = <&kp LGUI &kp D>;
         };
 
         macro_gamebar: macro_gamebar {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LGUI>,
-                <&kp G>;
+            bindings = <&kp LGUI &kp G>;
         };
     };
 
@@ -46,45 +36,36 @@
         compatible = "zmk,keymap";
 
         default_layer {
-
             bindings = <
+                &macro_comma
+                &macro_period
+                &macro_desktop
+                &macro_gamebar
 
-            /* Row 0 */
-            &macro_comma
-            &macro_period
-            &macro_desktop
-            &macro_gamebar
+                &kp KP_NUMLOCK
+                &kp KP_SLASH
+                &kp KP_MULTIPLY
+                &kp KP_MINUS
 
-            /* Row 1 */
-            &kp KP_NUMLOCK
-            &kp KP_SLASH
-            &kp KP_MULTIPLY
-            &kp KP_MINUS
+                &kp KP_7
+                &kp KP_8
+                &kp KP_9
+                &kp KP_PLUS
 
-            /* Row 2 */
-            &kp KP_7
-            &kp KP_8
-            &kp KP_9
-            &kp KP_PLUS
+                &kp KP_4
+                &kp KP_5
+                &kp KP_6
+                &none
 
-            /* Row 3 */
-            &kp KP_4
-            &kp KP_5
-            &kp KP_6
-            &none
+                &kp KP_1
+                &kp KP_2
+                &kp KP_3
+                &kp KP_ENTER
 
-            /* Row 4 */
-            &kp KP_1
-            &kp KP_2
-            &kp KP_3
-            &kp KP_ENTER
-
-            /* Row 5 */
-            &none
-            &kp KP_0
-            &kp KP_DOT
-            &none
-
+                &none
+                &kp KP_0
+                &kp KP_DOT
+                &none
             >;
         };
     };
