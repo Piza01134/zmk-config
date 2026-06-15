@@ -1,0 +1,91 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    macros {
+
+        macro_comma: macro_comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LCTRL>,
+                <&kp LSHIFT>,
+                <&kp COMMA>;
+        };
+
+        macro_period: macro_period {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LCTRL>,
+                <&kp LSHIFT>,
+                <&kp DOT>;
+        };
+
+        macro_desktop: macro_desktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LGUI>,
+                <&kp D>;
+        };
+
+        macro_gamebar: macro_gamebar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LGUI>,
+                <&kp G>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+
+            bindings = <
+
+            /* Row 0 */
+            &macro_comma
+            &macro_period
+            &macro_desktop
+            &macro_gamebar
+
+            /* Row 1 */
+            &kp KP_NUMLOCK
+            &kp KP_SLASH
+            &kp KP_MULTIPLY
+            &kp KP_MINUS
+
+            /* Row 2 */
+            &kp N7
+            &kp N8
+            &kp N9
+            &kp KP_PLUS
+
+            /* Row 3 */
+            &kp N4
+            &kp N5
+            &kp N6
+            &none
+
+            /* Row 4 */
+            &kp N1
+            &kp N2
+            &kp N3
+            &kp KP_ENTER
+
+            /* Row 5 */
+            &none
+            &kp N0
+            &kp KP_DOT
+            &none
+
+            >;
+        };
+    };
+};
