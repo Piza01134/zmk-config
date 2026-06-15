@@ -1,0 +1,118 @@
+// config/numpad01.keymap
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+    /*
+     * MATRIX TRANSFORM (THIS FIXES YOUR ERROR)
+     */
+    default_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+
+        rows = <6>;
+        columns = <4>;
+
+        map = <
+            0  1  2  3
+            4  5  6  7
+            8  9  10 11
+            12 13 14 15
+            16 17 18 19
+            20 21 22 23
+        >;
+    };
+
+    /*
+     * MACROS
+     */
+    macros {
+        macro_comma: macro_comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LCTRL
+                &kp LSHIFT
+                &kp COMMA
+            >;
+        };
+
+        macro_period: macro_period {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LCTRL
+                &kp LSHIFT
+                &kp DOT
+            >;
+        };
+
+        macro_desktop: macro_desktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LGUI
+                &kp D
+            >;
+        };
+
+        macro_gamebar: macro_gamebar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LGUI
+                &kp G
+            >;
+        };
+    };
+
+    /*
+     * KEYMAP
+     */
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+
+                /* Row 0 (macros) */
+                &macro_comma
+                &macro_period
+                &macro_desktop
+                &macro_gamebar
+
+                /* Row 1 */
+                &kp NUMLOCK
+                &kp KP_SLASH
+                &kp KP_MULTIPLY
+                &kp KP_MINUS
+
+                /* Row 2 */
+                &kp KP_7
+                &kp KP_8
+                &kp KP_9
+                &kp KP_PLUS
+
+                /* Row 3 */
+                &kp KP_4
+                &kp KP_5
+                &kp KP_6
+                &none
+
+                /* Row 4 */
+                &kp KP_1
+                &kp KP_2
+                &kp KP_3
+                &kp KP_ENTER
+
+                /* Row 5 */
+                &none
+                &kp KP_0
+                &kp KP_DOT
+                &none
+            >;
+        };
+    };
+};
