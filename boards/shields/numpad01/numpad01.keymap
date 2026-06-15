@@ -56,32 +56,32 @@
             &macro_gamebar
 
             /* Row 1 */
-            &kp C_NUM_LOCK
+            &kp KP_NUMLOCK
             &kp KP_SLASH
             &kp KP_MULTIPLY
             &kp KP_MINUS
 
             /* Row 2 */
-            &kp A
-            &kp B
-            &kp C
-            &kp D
+            &kp N7
+            &kp N8
+            &kp N9
+            &kp KP_PLUS
 
             /* Row 3 */
-            &kp KP_4
-            &kp KP_5
-            &kp KP_6
+            &kp N4
+            &kp N5
+            &kp N6
             &none
 
             /* Row 4 */
-            &kp KP_1
-            &kp KP_2
-            &kp KP_3
+            &kp N1
+            &kp N2
+            &kp N3
             &kp KP_ENTER
 
             /* Row 5 */
             &none
-            &kp KP_0
+            &kp N0
             &kp KP_DOT
             &none
 
