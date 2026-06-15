@@ -49,17 +49,17 @@
 
             bindings = <
 
-            /* Row 0 */
-            &macro_comma
-            &macro_period
-            &macro_desktop
-            &macro_gamebar
-
-            /* Row 1 */
+            /* Row 0 test */
             &kp A
             &kp B
             &kp C
             &kp D
+
+            /* Row 1 */
+            &kp KP_NUMLOCK
+            &kp KP_SLASH
+            &kp KP_MULTIPLY
+            &kp KP_MINUS
 
             /* Row 2 */
             &kp KP_7
