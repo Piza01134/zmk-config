@@ -1,0 +1,31 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+
+                /* Row 0 - Macros */
+                &kp LC(C) &kp LS(C) &kp LG(D) &kp LG(G)
+
+                /* Row 1 */
+                &kp KP_NUMLOCK &kp KP_SLASH &kp KP_MULTIPLY &kp KP_MINUS
+
+                /* Row 2 */
+                &kp KP_7 &kp KP_8 &kp KP_9 &kp KP_PLUS
+
+                /* Row 3 */
+                &kp KP_4 &kp KP_5 &kp KP_6 &none
+
+                /* Row 4 */
+                &kp KP_1 &kp KP_2 &kp KP_3 &kp KP_ENTER
+
+                /* Row 5 */
+                &none &kp KP_0 &kp KP_DOT &none
+            >;
+        };
+    };
+};
