@@ -1,9 +1,6 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
-// instructions.
+// boards/shields/numpad01/numpad01.overlay
 
 #include <dt-bindings/zmk/matrix_transform.h>
-
 #include "numpad01-layouts.dtsi"
 
 / {
@@ -11,24 +8,32 @@
         compatible = "zmk,kscan-gpio-matrix";
 
         /*
-         Change if your diode direction is opposite
-        */
+         * IMPORTANT:
+         * Change this if your diodes are reversed
+         */
         diode-direction = "col2row";
 
+        /*
+         * ROWS (6)
+         * Use valid nice!nano GPIO controller
+         */
         row-gpios = <
-            &pro_micro 6 GPIO_ACTIVE_HIGH
-            &pro_micro 8 GPIO_ACTIVE_HIGH
-            &pro_micro 17 GPIO_ACTIVE_HIGH
-            &pro_micro 20 GPIO_ACTIVE_HIGH
-            &pro_micro 22 GPIO_ACTIVE_HIGH
-            &pro_micro 24 GPIO_ACTIVE_HIGH
+            &gpio0 6  GPIO_ACTIVE_HIGH
+            &gpio0 8  GPIO_ACTIVE_HIGH
+            &gpio0 17 GPIO_ACTIVE_HIGH
+            &gpio0 20 GPIO_ACTIVE_HIGH
+            &gpio0 22 GPIO_ACTIVE_HIGH
+            &gpio0 24 GPIO_ACTIVE_HIGH
         >;
 
+        /*
+         * COLS (4)
+         */
         col-gpios = <
-            &pro_micro 9 GPIO_ACTIVE_HIGH
-            &pro_micro 10 GPIO_ACTIVE_HIGH
-            &pro_micro 111 GPIO_ACTIVE_HIGH
-            &pro_micro 113 GPIO_ACTIVE_HIGH
+            &gpio0 9  GPIO_ACTIVE_HIGH
+            &gpio0 10 GPIO_ACTIVE_HIGH
+            &gpio0 11 GPIO_ACTIVE_HIGH
+            &gpio0 12 GPIO_ACTIVE_HIGH
         >;
     };
 };
